@@ -1,14 +1,85 @@
-I would love to have a fluent API support in the MAUI, so I have created a fork [https://github.com/idexus/maui](https://github.com/idexus/maui) to support this feature. 
+### Discussed in https://github.com/dotnet/maui/discussions/12273
 
-# Properties
+I would like to have fluent API support in MAUI so first I created a library [https://github.com/idexus/Sharp.UI](https://github.com/idexus/Sharp.UI) then because some classes are sealed, I decided to create a fork [https://github.com/idexus/maui](https://github.com/idexus/maui) to fully support this feature in the MAUI project. Most often it is generated automatically.
 
-It generates fluent extension methods for all properties and bindable properties for all `BindableObject` classes, and for properties for `Style`, `VisualState`, `VisualStateGroup`, `VisualStateGroupList` classes
+I think for many it would make it much easier to create an interface without the need for XAML, without disabling the possibility of using it.
+
+My goal was:
+
+```cs
+new ScrollView
+{
+    new VerticalStackLayout
+    {
+        new Grid
+        {
+            new Label("Hello")
+                .Column(0)
+                .FontSize(28),
+            
+            new Label("World", out var label)
+                .Column(1),
+
+            new Button("Click me")
+                .Row(1)
+                .ColumnSpan(2)
+                .OnClicked(button => {
+                    label.Text = "you";
+                });
+        }
+        .ColumnDefinitions(e => e.Star(2).Star(1))
+        .RowDefinitions(e => e.Star().Absolute(100)),
+            
+        new Path
+        {
+            new GeometryGroup
+            {
+                new PathGeometry
+                {
+                    new PathFigure(15, 50)
+                    {
+                        new LineSegment(800,150),
+                        new LineSegment(500,50)
+                    }
+                },
+
+                new EllipseGeometry()
+                    .Center(new Point(50,70))
+                    .RadiusX(10)
+                    .RadiusY(50),
+            }
+        }
+        .Stroke(Colors.Yellow)
+        .Fill(Colors.Red),
+    }
+}
+```
+
+I have two questions
+- Is it possible to include fluent API support directly in the maui project?
+- If there is no way to add such support to the maui project for now, is there a way to "unseal" the maui classes?
+
+Unfortunately some classes are sealed, e.g. 
+
+`PathGeometry`, `PathFigure`, `TapGestureRecognizer`, `PinchGestureRecognizer`, `PointerGestureRecognizer`, `SwipeGestureRecognizer`, `Ellipse`, `Polyline`, `Line`, `Path`, `Polygon`, `Rectangle`, `RoundRectangle`, `TableSection`, `ColumnDefinition`, `RowDefinition` `Style`, `Trigger`,... etc.
+
+If I wanted to create a library with these classes so that I could create the UI declaratively as I described, only in code using fluent interface, I can't do it without wrapping them.
+
+# Detailed description
+
+Below is a description of how each problem was solved.
+
+## Properties
+
+Fluent extension methods are generated for all properties and bindable properties (for all derived classes of `BindableObject`, and for `Style`, `VisualState`, `VisualStateGroup`, `VisualStateGroupList` classes)
 
 Usage:
 ```cs
-Label().FontSize(28)
+Label()
+  .FontSize(28)
+  .TextColor(Colors.White)
 ```
-Generated methods:
+Generated methods for `FontSize` property:
 ```cs
 public static T FontSize<T>(this T obj,
     double fontSize)
@@ -46,9 +117,9 @@ public static T FontSize<T>(this T obj,
 }
 ```
 
-# `EventHandler`
+## `EventHandler`
 
-It generates fluent extension methods for each `EventHandler` adding an `On` prefix
+Fluent extension methods are generated for each `EventHandler` adding an `On` prefix
 
 usage example:
 
@@ -63,7 +134,7 @@ new VerticalStackLayout
 }
 ```
 
-generated methods:
+generated methods for `Clicked` event handler:
 
 ```cs
 public static T OnClicked<T>(this T obj, System.EventHandler handler)
@@ -81,9 +152,9 @@ public static T OnClicked<T>(this T obj, System.Action<T> action)
 }
 ```
 
-# `ContentProperty` attributes
+## `ContentProperty` attributes
 
-It generates implementation of `IList` (Some classes have already implemented the `IList` interface) or `IEnumerable` interfaces to add `Add()` method support for all classes with the `ContentProperty` attribute.
+Implementation of `IList` (if not implemented yet) or `IEnumerable` interfaces to add `Add()` method support to class are generated for all classes with the `ContentProperty` attribute.
 
 Example usage:
 
@@ -151,13 +222,11 @@ public partial class Shell : IList<Microsoft.Maui.Controls.ShellItem>
 }
 ```
 
-# Constructors
+## Constructors
 
 ### Aditional constructors
 
-
-
-It defines additional constructors to simplify process of interface creation
+Additional constructors have been added to simplify the interface creation process
 
 example usage:
 
@@ -186,7 +255,7 @@ public partial class Label
 
 ### Additional `out` parameter
 
-For all constructors, it generates additional constructor with the `out` parameter.
+Additional constructors with the `out` parameter are generated for all public constructors.
 
 usage:
 
@@ -222,11 +291,11 @@ public partial class Label : IEnumerable
 }
 ```
 
-# In-line value builders
+## In-line value builders
 
 ### `BindingBuilder`
 
-It declares `BindingBuilder` for in-line bindings
+For in-line creation of bindings
 
 usage:
 
@@ -241,7 +310,7 @@ new VerticalStackLayout
 
 ### `ValueBuilder`
 
-It declares `ValueBuilder` to set values depending on the app theme, platform or device idiom
+To set values depending on the app theme, platform or device idiom
 
 ```cs
 new Label("Hello")
@@ -251,7 +320,7 @@ new Label("Hello")
 
 ### `LazyValueBuilder`
 
-It declares LazyValueBuilder to lazily set values depending on the app theme, platform or device idiom
+To lazily set values depending on the app theme, platform or device idiom
 
 ```cs
 new Label()
@@ -261,7 +330,26 @@ new Label()
     )
 ```
 
-# Style
+### `ColumnDefinitionBuilder` and `RowDefinitionBuilder`
+
+To define the number and sizes of rows and columns.
+
+example:
+
+```cs
+new Grid
+{
+    ...
+}
+.RowDefinitions(e => e.Star(2).Star().Star(3))
+.ColumnDefinitions(e => e.Absolute(100).Star());
+``` 
+
+In this example you define
+- 3 rows - `Star(2)`, `Star()`, `Star(3)`
+- 2 columns - `Absolute(100)`, `Star()`
+
+## Style
 
 ### `BindableProperty` => `Setter`
 
@@ -269,6 +357,23 @@ new Label()
 Button.BackgroundColorProperty.Set(Colors.White),
 
 Button.TextColorProperty.Set().OnLight(Colors.White).OnDark(AppColors.Primary),
+```
+
+implementation
+
+```cs
+public static class BindablePropertyExtension
+{
+    public static Setter Set(this BindableProperty property, object value) => new Setter { Property = property, Value = value };
+    public static Setter Set(this BindableProperty property) => new Setter { Property = property };		
+}
+
+public static class SetterExtension
+{
+    public static Setter OnLight(this Setter setter, object value) { if (Application.Current?.RequestedTheme == AppTheme.Light) setter.Value = value; return setter; }
+    public static Setter OnDark(this Setter setter, object value) { if (Application.Current?.RequestedTheme == AppTheme.Dark) setter.Value = value; return setter; }
+    ...
+}
 ```
 
 ### `IList` Add methods
@@ -309,20 +414,20 @@ new Style(typeof(Button))
 ```
 
 
-# User defined classes
+## User defined classes
 
 ### `[FluentInterface]` attribute
 
-It generates fluent methods for user definied classes with the `[FluentInterface]` attribute
+Fluent methods will be generated for user definied classes with the `[FluentInterface]` attribute
 
 ### `[BindableProperties]` attribute
 
-It generates bindable properties and fluent methods for user definied classes with interfaces with the `[BindableProperties]` attribute
+Bindable properties and fluent methods will be generated for user definied classes with interfaces with the `[BindableProperties]` attribute
 
 ##### Additional atributes:
 
 - `[DefaultValue]` to define default values
-- `[PropertyCallbacksAttribute(propertyChanged, propertyChanging,validateValue, coerceValue, defaultValueCreator]` to define callback names
+- `[PropertyCallbacks(propertyChanged, propertyChanging,validateValue, coerceValue, defaultValueCreator]` to define callback names
 
 ##### Example
 
@@ -363,7 +468,7 @@ public partial class AngleViewModel : BindableObject, IAngleViewModelProperties
 }
 ```
 
-# Custom user views
+## Custom user view example
 
 ```cs
 [BindableProperties]
@@ -479,5 +584,4 @@ public partial class CardViewPage : ContentPage
         .Padding(100);
     }
 }
-
 ```
