@@ -4,7 +4,7 @@ using Microsoft.Maui.Graphics.Converters;
 namespace Microsoft.Maui.Controls.Shapes
 {
 	/// <include file="../../../docs/Microsoft.Maui.Controls.Shapes/ArcSegment.xml" path="Type[@FullName='Microsoft.Maui.Controls.Shapes.ArcSegment']/Docs/*" />
-	public class ArcSegment : PathSegment
+	public partial class ArcSegment : PathSegment
 	{
 		/// <include file="../../../docs/Microsoft.Maui.Controls.Shapes/ArcSegment.xml" path="//Member[@MemberName='.ctor'][1]/Docs/*" />
 		public ArcSegment()

@@ -3,7 +3,7 @@ using Microsoft.Maui.Graphics;
 namespace Microsoft.Maui.Controls
 {
 	/// <include file="../../docs/Microsoft.Maui.Controls/RadialGradientBrush.xml" path="Type[@FullName='Microsoft.Maui.Controls.RadialGradientBrush']/Docs/*" />
-	public class RadialGradientBrush : GradientBrush
+	public partial class RadialGradientBrush : GradientBrush
 	{
 		/// <include file="../../docs/Microsoft.Maui.Controls/RadialGradientBrush.xml" path="//Member[@MemberName='.ctor'][1]/Docs/*" />
 		public RadialGradientBrush()

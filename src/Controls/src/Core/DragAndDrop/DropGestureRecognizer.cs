@@ -8,7 +8,7 @@ using System.Windows.Input;
 namespace Microsoft.Maui.Controls
 {
 	/// <include file="../../../docs/Microsoft.Maui.Controls/DropGestureRecognizer.xml" path="Type[@FullName='Microsoft.Maui.Controls.DropGestureRecognizer']/Docs/*" />
-	public class DropGestureRecognizer : GestureRecognizer
+	public partial class DropGestureRecognizer : GestureRecognizer
 	{
 		/// <include file="../../../docs/Microsoft.Maui.Controls/DropGestureRecognizer.xml" path="//Member[@MemberName='AllowDropProperty']/Docs/*" />
 		public static readonly BindableProperty AllowDropProperty = BindableProperty.Create(nameof(AllowDrop), typeof(bool), typeof(DropGestureRecognizer), true);

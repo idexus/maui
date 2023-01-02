@@ -145,7 +145,7 @@ namespace Microsoft.Maui.Controls
 	}
 
 	/// <include file="../../docs/Microsoft.Maui.Controls/VisualStateGroupList.xml" path="Type[@FullName='Microsoft.Maui.Controls.VisualStateGroupList']/Docs/*" />
-	public class VisualStateGroupList : IList<VisualStateGroup>
+	public partial class VisualStateGroupList : IList<VisualStateGroup>
 	{
 		readonly IList<VisualStateGroup> _internalList;
 		internal bool IsDefault { get; private set; }
@@ -360,7 +360,7 @@ namespace Microsoft.Maui.Controls
 	/// <include file="../../docs/Microsoft.Maui.Controls/VisualStateGroup.xml" path="Type[@FullName='Microsoft.Maui.Controls.VisualStateGroup']/Docs/*" />
 	[RuntimeNameProperty(nameof(Name))]
 	[ContentProperty(nameof(States))]
-	public sealed class VisualStateGroup
+	public sealed partial class VisualStateGroup
 	{
 		/// <include file="../../docs/Microsoft.Maui.Controls/VisualStateGroup.xml" path="//Member[@MemberName='.ctor']/Docs/*" />
 		public VisualStateGroup()
@@ -564,7 +564,7 @@ namespace Microsoft.Maui.Controls
 
 	/// <include file="../../docs/Microsoft.Maui.Controls/VisualState.xml" path="Type[@FullName='Microsoft.Maui.Controls.VisualState']/Docs/*" />
 	[RuntimeNameProperty(nameof(Name))]
-	public sealed class VisualState
+	public sealed partial class VisualState
 	{
 		/// <include file="../../docs/Microsoft.Maui.Controls/VisualState.xml" path="//Member[@MemberName='.ctor']/Docs/*" />
 		public VisualState()

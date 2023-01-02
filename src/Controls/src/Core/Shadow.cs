@@ -2,7 +2,7 @@
 
 namespace Microsoft.Maui.Controls
 {
-	public class Shadow : Element, IShadow
+	public partial class Shadow : Element, IShadow
 	{
 		public static readonly BindableProperty RadiusProperty = BindableProperty.Create(nameof(Radius), typeof(float), typeof(Shadow), 10f);
 

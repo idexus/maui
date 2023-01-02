@@ -12,7 +12,7 @@ using Microsoft.Maui.Controls.Internals;
 namespace Microsoft.Maui.Controls
 {
 	[ContentProperty("Children")]
-	public abstract class MultiPage<[DynamicallyAccessedMembers(BindableProperty.DeclaringTypeMembers)] T> : Page, IViewContainer<T>, IPageContainer<T>, IItemsView<T>, IMultiPageController<T> where T : Page
+	public abstract partial class MultiPage<[DynamicallyAccessedMembers(BindableProperty.DeclaringTypeMembers)] T> : Page, IViewContainer<T>, IPageContainer<T>, IItemsView<T>, IMultiPageController<T> where T : Page
 	{
 		public static readonly BindableProperty ItemsSourceProperty = BindableProperty.Create("ItemsSource", typeof(IEnumerable), typeof(MultiPage<>), null);
 

@@ -10,7 +10,7 @@ using static Microsoft.Maui.Controls.VisualElement;
 namespace Microsoft.Maui.Controls
 {
 	/// <include file="../../../docs/Microsoft.Maui.Controls/SearchHandler.xml" path="Type[@FullName='Microsoft.Maui.Controls.SearchHandler']/Docs/*" />
-	public class SearchHandler : BindableObject, ISearchHandlerController, IPlaceholderElement, IFontElement, ITextElement, ITextAlignmentElement
+	public partial class SearchHandler : BindableObject, ISearchHandlerController, IPlaceholderElement, IFontElement, ITextElement, ITextAlignmentElement
 	{
 		/// <include file="../../../docs/Microsoft.Maui.Controls/SearchHandler.xml" path="//Member[@MemberName='IsFocusedPropertyKey']/Docs/*" />
 		[EditorBrowsable(EditorBrowsableState.Never)]

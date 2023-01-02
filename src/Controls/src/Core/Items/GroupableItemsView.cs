@@ -1,7 +1,7 @@
 namespace Microsoft.Maui.Controls
 {
 	/// <include file="../../../docs/Microsoft.Maui.Controls/GroupableItemsView.xml" path="Type[@FullName='Microsoft.Maui.Controls.GroupableItemsView']/Docs/*" />
-	public class GroupableItemsView : SelectableItemsView
+	public partial class GroupableItemsView : SelectableItemsView
 	{
 		/// <include file="../../../docs/Microsoft.Maui.Controls/GroupableItemsView.xml" path="//Member[@MemberName='IsGroupedProperty']/Docs/*" />
 		public static readonly BindableProperty IsGroupedProperty =

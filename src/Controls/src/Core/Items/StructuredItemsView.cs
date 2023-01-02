@@ -1,7 +1,7 @@
 namespace Microsoft.Maui.Controls
 {
 	/// <include file="../../../docs/Microsoft.Maui.Controls/StructuredItemsView.xml" path="Type[@FullName='Microsoft.Maui.Controls.StructuredItemsView']/Docs/*" />
-	public class StructuredItemsView : ItemsView
+	public partial class StructuredItemsView : ItemsView
 	{
 		/// <include file="../../../docs/Microsoft.Maui.Controls/StructuredItemsView.xml" path="//Member[@MemberName='HeaderProperty']/Docs/*" />
 		public static readonly BindableProperty HeaderProperty =

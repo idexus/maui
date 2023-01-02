@@ -14,7 +14,7 @@ using Microsoft.Maui.Graphics;
 namespace Microsoft.Maui.Controls
 {
 	/// <include file="../../docs/Microsoft.Maui.Controls/ListView.xml" path="Type[@FullName='Microsoft.Maui.Controls.ListView']/Docs/*" />
-	public class ListView : ItemsView<Cell>, IListViewController, IElementConfiguration<ListView>, IVisualTreeElement
+	public partial class ListView : ItemsView<Cell>, IListViewController, IElementConfiguration<ListView>, IVisualTreeElement
 	{
 		readonly List<Element> _logicalChildren = new List<Element>();
 		IReadOnlyList<IVisualTreeElement> IVisualTreeElement.GetVisualChildren() => _logicalChildren;

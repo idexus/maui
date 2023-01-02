@@ -12,7 +12,7 @@ namespace Microsoft.Maui.Controls
 {
 	/// <include file="../../../docs/Microsoft.Maui.Controls/Tab.xml" path="Type[@FullName='Microsoft.Maui.Controls.Tab']/Docs/*" />
 	[EditorBrowsable(EditorBrowsableState.Always)]
-	public class Tab : ShellSection
+	public partial class Tab : ShellSection
 	{
 	}
 

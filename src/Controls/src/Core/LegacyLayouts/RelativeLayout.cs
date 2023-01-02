@@ -10,7 +10,7 @@ using Microsoft.Maui.Graphics;
 namespace Microsoft.Maui.Controls.Compatibility
 {
 	[ContentProperty(nameof(Children))]
-	public class RelativeLayout : Layout<View>, IElementConfiguration<RelativeLayout>
+	public partial class RelativeLayout : Layout<View>, IElementConfiguration<RelativeLayout>
 	{
 		public static readonly BindableProperty XConstraintProperty = BindableProperty.CreateAttached("XConstraint", typeof(Constraint), typeof(RelativeLayout), null, propertyChanged: ConstraintChanged);
 

@@ -3,7 +3,7 @@ using Microsoft.Maui.Graphics;
 namespace Microsoft.Maui.Controls.Shapes
 {
 	/// <include file="../../../docs/Microsoft.Maui.Controls.Shapes/BezierSegment.xml" path="Type[@FullName='Microsoft.Maui.Controls.Shapes.BezierSegment']/Docs/*" />
-	public class BezierSegment : PathSegment
+	public partial class BezierSegment : PathSegment
 	{
 		/// <include file="../../../docs/Microsoft.Maui.Controls.Shapes/BezierSegment.xml" path="//Member[@MemberName='.ctor'][1]/Docs/*" />
 		public BezierSegment()

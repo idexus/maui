@@ -3,7 +3,7 @@ using Microsoft.Maui.Graphics;
 namespace Microsoft.Maui.Controls.Shapes
 {
 	/// <include file="../../../docs/Microsoft.Maui.Controls.Shapes/LineSegment.xml" path="Type[@FullName='Microsoft.Maui.Controls.Shapes.LineSegment']/Docs/*" />
-	public class LineSegment : PathSegment
+	public partial class LineSegment : PathSegment
 	{
 		/// <include file="../../../docs/Microsoft.Maui.Controls.Shapes/LineSegment.xml" path="//Member[@MemberName='.ctor'][1]/Docs/*" />
 		public LineSegment()

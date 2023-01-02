@@ -10,7 +10,7 @@ using Microsoft.Maui.Layouts;
 namespace Microsoft.Maui.Controls.Compatibility
 {
 	[ContentProperty(nameof(Children))]
-	public class AbsoluteLayout : Layout<View>, IElementConfiguration<AbsoluteLayout>
+	public partial class AbsoluteLayout : Layout<View>, IElementConfiguration<AbsoluteLayout>
 	{
 		public static readonly BindableProperty LayoutFlagsProperty = BindableProperty.CreateAttached("LayoutFlags", typeof(AbsoluteLayoutFlags), typeof(AbsoluteLayout), AbsoluteLayoutFlags.None);
 

@@ -5,7 +5,7 @@ using System.Windows.Input;
 namespace Microsoft.Maui.Controls
 {
 	/// <include file="../../../docs/Microsoft.Maui.Controls/SelectableItemsView.xml" path="Type[@FullName='Microsoft.Maui.Controls.SelectableItemsView']/Docs/*" />
-	public class SelectableItemsView : StructuredItemsView
+	public partial class SelectableItemsView : StructuredItemsView
 	{
 		/// <include file="../../../docs/Microsoft.Maui.Controls/SelectableItemsView.xml" path="//Member[@MemberName='SelectionModeProperty']/Docs/*" />
 		public static readonly BindableProperty SelectionModeProperty =

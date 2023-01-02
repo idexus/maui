@@ -12,7 +12,7 @@ namespace Microsoft.Maui.Controls
 {
 	/// <include file="../../../docs/Microsoft.Maui.Controls/FlyoutItem.xml" path="Type[@FullName='Microsoft.Maui.Controls.FlyoutItem']/Docs/*" />
 	[EditorBrowsable(EditorBrowsableState.Always)]
-	public class FlyoutItem : ShellItem
+	public partial class FlyoutItem : ShellItem
 	{
 		/// <include file="../../../docs/Microsoft.Maui.Controls/FlyoutItem.xml" path="//Member[@MemberName='LabelStyle']/Docs/*" />
 		public const string LabelStyle = "FlyoutItemLabelStyle";
@@ -37,7 +37,7 @@ namespace Microsoft.Maui.Controls
 
 	/// <include file="../../../docs/Microsoft.Maui.Controls/TabBar.xml" path="Type[@FullName='Microsoft.Maui.Controls.TabBar']/Docs/*" />
 	[EditorBrowsable(EditorBrowsableState.Always)]
-	public class TabBar : ShellItem
+	public partial class TabBar : ShellItem
 	{
 		/// <include file="../../../docs/Microsoft.Maui.Controls/TabBar.xml" path="//Member[@MemberName='.ctor']/Docs/*" />
 		public TabBar()
@@ -49,7 +49,7 @@ namespace Microsoft.Maui.Controls
 	/// <include file="../../../docs/Microsoft.Maui.Controls/ShellItem.xml" path="Type[@FullName='Microsoft.Maui.Controls.ShellItem']/Docs/*" />
 	[ContentProperty(nameof(Items))]
 	[EditorBrowsable(EditorBrowsableState.Never)]
-	public class ShellItem : ShellGroupItem, IShellItemController, IElementConfiguration<ShellItem>, IPropertyPropagationController, IVisualTreeElement
+	public partial class ShellItem : ShellGroupItem, IShellItemController, IElementConfiguration<ShellItem>, IPropertyPropagationController, IVisualTreeElement
 	{
 		#region PropertyKeys
 

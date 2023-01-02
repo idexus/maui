@@ -3,7 +3,7 @@ using System;
 namespace Microsoft.Maui.Controls.Shapes
 {
 	/// <include file="../../../docs/Microsoft.Maui.Controls.Shapes/RotateTransform.xml" path="Type[@FullName='Microsoft.Maui.Controls.Shapes.RotateTransform']/Docs/*" />
-	public class RotateTransform : Transform
+	public partial class RotateTransform : Transform
 	{
 		/// <include file="../../../docs/Microsoft.Maui.Controls.Shapes/RotateTransform.xml" path="//Member[@MemberName='.ctor'][1]/Docs/*" />
 		public RotateTransform()

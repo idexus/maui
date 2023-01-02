@@ -1,7 +1,7 @@
 namespace Microsoft.Maui.Controls.Shapes
 {
 	/// <include file="../../../docs/Microsoft.Maui.Controls.Shapes/PolyLineSegment.xml" path="Type[@FullName='Microsoft.Maui.Controls.Shapes.PolyLineSegment']/Docs/*" />
-	public class PolyLineSegment : PathSegment
+	public partial class PolyLineSegment : PathSegment
 	{
 		/// <include file="../../../docs/Microsoft.Maui.Controls.Shapes/PolyLineSegment.xml" path="//Member[@MemberName='.ctor'][1]/Docs/*" />
 		public PolyLineSegment()

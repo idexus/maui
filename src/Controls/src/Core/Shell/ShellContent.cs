@@ -10,7 +10,7 @@ namespace Microsoft.Maui.Controls
 {
 	/// <include file="../../../docs/Microsoft.Maui.Controls/ShellContent.xml" path="Type[@FullName='Microsoft.Maui.Controls.ShellContent']/Docs/*" />
 	[ContentProperty(nameof(Content))]
-	public class ShellContent : BaseShellItem, IShellContentController, IVisualTreeElement
+	public partial class ShellContent : BaseShellItem, IShellContentController, IVisualTreeElement
 	{
 		static readonly BindablePropertyKey MenuItemsPropertyKey =
 			BindableProperty.CreateReadOnly(nameof(MenuItems), typeof(MenuItemCollection), typeof(ShellContent), null,

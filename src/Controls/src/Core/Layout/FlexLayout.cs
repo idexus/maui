@@ -10,7 +10,7 @@ namespace Microsoft.Maui.Controls
 {
 	/// <include file="../../../docs/Microsoft.Maui.Controls/FlexLayout.xml" path="Type[@FullName='Microsoft.Maui.Controls.FlexLayout']/Docs/*" />
 	[ContentProperty(nameof(Children))]
-	public class FlexLayout : Layout, IFlexLayout
+	public partial class FlexLayout : Layout, IFlexLayout
 	{
 		Flex.Item _root;
 

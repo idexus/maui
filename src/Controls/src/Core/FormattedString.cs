@@ -9,7 +9,7 @@ namespace Microsoft.Maui.Controls
 {
 	/// <include file="../../docs/Microsoft.Maui.Controls/FormattedString.xml" path="Type[@FullName='Microsoft.Maui.Controls.FormattedString']/Docs/*" />
 	[ContentProperty("Spans")]
-	public class FormattedString : Element
+	public partial class FormattedString : Element
 	{
 		readonly SpanCollection _spans = new SpanCollection();
 		internal event NotifyCollectionChangedEventHandler SpansCollectionChanged;

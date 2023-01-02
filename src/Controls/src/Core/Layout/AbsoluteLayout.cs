@@ -6,7 +6,7 @@ using Microsoft.Maui.Layouts;
 namespace Microsoft.Maui.Controls
 {
 	/// <include file="../../../docs/Microsoft.Maui.Controls/AbsoluteLayout.xml" path="Type[@FullName='Microsoft.Maui.Controls.AbsoluteLayout']/Docs/*" />
-	public class AbsoluteLayout : Layout, IAbsoluteLayout
+	public partial class AbsoluteLayout : Layout, IAbsoluteLayout
 	{
 		readonly Dictionary<IView, AbsoluteLayoutInfo> _viewInfo = new();
 

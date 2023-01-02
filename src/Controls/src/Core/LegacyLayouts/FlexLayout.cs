@@ -9,7 +9,7 @@ using Flex = Microsoft.Maui.Layouts.Flex;
 namespace Microsoft.Maui.Controls.Compatibility
 {
 	[ContentProperty(nameof(Children))]
-	public class FlexLayout : Layout<View>
+	public partial class FlexLayout : Layout<View>
 	{
 		public static readonly BindableProperty DirectionProperty =
 			BindableProperty.Create(nameof(Direction), typeof(FlexDirection), typeof(FlexLayout), FlexDirection.Row,

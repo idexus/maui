@@ -8,7 +8,7 @@ using System.Linq;
 namespace Microsoft.Maui.Controls
 {
 	/// <include file="../../docs/Microsoft.Maui.Controls/SwipeItems.xml" path="Type[@FullName='Microsoft.Maui.Controls.SwipeItems']/Docs/*" />
-	public class SwipeItems : Element, IList<ISwipeItem>, INotifyCollectionChanged
+	public partial class SwipeItems : Element, IList<ISwipeItem>, INotifyCollectionChanged
 	{
 		readonly ObservableCollection<Maui.ISwipeItem> _swipeItems;
 

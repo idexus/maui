@@ -5,7 +5,7 @@ namespace Microsoft.Maui.Controls
 {
 
 	/// <include file="../../docs/Microsoft.Maui.Controls/TemplatedPage.xml" path="Type[@FullName='Microsoft.Maui.Controls.TemplatedPage']/Docs/*" />
-	public class TemplatedPage : Page, IControlTemplated
+	public partial class TemplatedPage : Page, IControlTemplated
 	{
 		/// <include file="../../docs/Microsoft.Maui.Controls/TemplatedPage.xml" path="//Member[@MemberName='ControlTemplateProperty']/Docs/*" />
 		public static readonly BindableProperty ControlTemplateProperty = BindableProperty.Create(nameof(ControlTemplate), typeof(ControlTemplate), typeof(TemplatedPage), null,

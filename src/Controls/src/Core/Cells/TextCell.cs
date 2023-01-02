@@ -5,7 +5,7 @@ using Microsoft.Maui.Graphics;
 namespace Microsoft.Maui.Controls
 {
 	/// <include file="../../../docs/Microsoft.Maui.Controls/TextCell.xml" path="Type[@FullName='Microsoft.Maui.Controls.TextCell']/Docs/*" />
-	public class TextCell : Cell
+	public partial class TextCell : Cell
 	{
 		/// <include file="../../../docs/Microsoft.Maui.Controls/TextCell.xml" path="//Member[@MemberName='CommandProperty']/Docs/*" />
 		public static readonly BindableProperty CommandProperty = BindableProperty.Create("Command", typeof(ICommand), typeof(TextCell), default(ICommand),

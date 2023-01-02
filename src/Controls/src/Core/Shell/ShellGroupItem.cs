@@ -3,7 +3,7 @@ using System;
 namespace Microsoft.Maui.Controls
 {
 	/// <include file="../../../docs/Microsoft.Maui.Controls/ShellGroupItem.xml" path="Type[@FullName='Microsoft.Maui.Controls.ShellGroupItem']/Docs/*" />
-	public class ShellGroupItem : BaseShellItem
+	public partial class ShellGroupItem : BaseShellItem
 	{
 		/// <include file="../../../docs/Microsoft.Maui.Controls/ShellGroupItem.xml" path="//Member[@MemberName='FlyoutDisplayOptionsProperty']/Docs/*" />
 		public static readonly BindableProperty FlyoutDisplayOptionsProperty =

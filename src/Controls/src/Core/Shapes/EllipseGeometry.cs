@@ -4,7 +4,7 @@ using Microsoft.Maui.Graphics;
 namespace Microsoft.Maui.Controls.Shapes
 {
 	/// <include file="../../../docs/Microsoft.Maui.Controls.Shapes/EllipseGeometry.xml" path="Type[@FullName='Microsoft.Maui.Controls.Shapes.EllipseGeometry']/Docs/*" />
-	public class EllipseGeometry : Geometry
+	public partial class EllipseGeometry : Geometry
 	{
 		/// <include file="../../../docs/Microsoft.Maui.Controls.Shapes/EllipseGeometry.xml" path="//Member[@MemberName='.ctor'][1]/Docs/*" />
 		public EllipseGeometry()

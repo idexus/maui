@@ -3,7 +3,7 @@
 namespace Microsoft.Maui.Controls
 {
 	/// <include file="../../docs/Microsoft.Maui.Controls/GradientStop.xml" path="Type[@FullName='Microsoft.Maui.Controls.GradientStop']/Docs/*" />
-	public class GradientStop : Element
+	public partial class GradientStop : Element
 	{
 		/// <include file="../../docs/Microsoft.Maui.Controls/GradientStop.xml" path="//Member[@MemberName='ColorProperty']/Docs/*" />
 		public static readonly BindableProperty ColorProperty = BindableProperty.Create(

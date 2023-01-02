@@ -4,7 +4,7 @@ using Microsoft.Maui.Graphics;
 namespace Microsoft.Maui.Controls.Shapes
 {
 	/// <include file="../../../docs/Microsoft.Maui.Controls.Shapes/LineGeometry.xml" path="Type[@FullName='Microsoft.Maui.Controls.Shapes.LineGeometry']/Docs/*" />
-	public class LineGeometry : Geometry
+	public partial class LineGeometry : Geometry
 	{
 		/// <include file="../../../docs/Microsoft.Maui.Controls.Shapes/LineGeometry.xml" path="//Member[@MemberName='.ctor'][1]/Docs/*" />
 		public LineGeometry()

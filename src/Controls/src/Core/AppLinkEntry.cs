@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Microsoft.Maui.Controls
 {
 	/// <include file="../../docs/Microsoft.Maui.Controls/AppLinkEntry.xml" path="Type[@FullName='Microsoft.Maui.Controls.AppLinkEntry']/Docs/*" />
-	public class AppLinkEntry : Element, IAppLinkEntry
+	public partial class AppLinkEntry : Element, IAppLinkEntry
 	{
 		readonly Dictionary<string, string> keyValues;
 

@@ -3,7 +3,7 @@ using System;
 namespace Microsoft.Maui.Controls
 {
 	/// <include file="../../../docs/Microsoft.Maui.Controls/ImageCell.xml" path="Type[@FullName='Microsoft.Maui.Controls.ImageCell']/Docs/*" />
-	public class ImageCell : TextCell
+	public partial class ImageCell : TextCell
 	{
 		/// <include file="../../../docs/Microsoft.Maui.Controls/ImageCell.xml" path="//Member[@MemberName='ImageSourceProperty']/Docs/*" />
 		public static readonly BindableProperty ImageSourceProperty = BindableProperty.Create("ImageSource", typeof(ImageSource), typeof(ImageCell), null,

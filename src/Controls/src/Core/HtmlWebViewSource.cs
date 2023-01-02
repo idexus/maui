@@ -3,7 +3,7 @@ using System.ComponentModel;
 namespace Microsoft.Maui.Controls
 {
 	/// <include file="../../docs/Microsoft.Maui.Controls/HtmlWebViewSource.xml" path="Type[@FullName='Microsoft.Maui.Controls.HtmlWebViewSource']/Docs/*" />
-	public class HtmlWebViewSource : WebViewSource
+	public partial class HtmlWebViewSource : WebViewSource
 	{
 		/// <include file="../../docs/Microsoft.Maui.Controls/HtmlWebViewSource.xml" path="//Member[@MemberName='HtmlProperty']/Docs/*" />
 		public static readonly BindableProperty HtmlProperty = BindableProperty.Create("Html", typeof(string), typeof(HtmlWebViewSource), default(string),

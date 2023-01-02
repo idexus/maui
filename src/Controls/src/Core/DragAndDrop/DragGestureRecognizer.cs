@@ -10,7 +10,7 @@ using Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;
 namespace Microsoft.Maui.Controls
 {
 	/// <include file="../../../docs/Microsoft.Maui.Controls/DragGestureRecognizer.xml" path="Type[@FullName='Microsoft.Maui.Controls.DragGestureRecognizer']/Docs/*" />
-	public class DragGestureRecognizer : GestureRecognizer
+	public partial class DragGestureRecognizer : GestureRecognizer
 	{
 		/// <include file="../../../docs/Microsoft.Maui.Controls/DragGestureRecognizer.xml" path="//Member[@MemberName='CanDragProperty']/Docs/*" />
 		public static readonly BindableProperty CanDragProperty = BindableProperty.Create(nameof(CanDrag), typeof(bool), typeof(DragGestureRecognizer), true);

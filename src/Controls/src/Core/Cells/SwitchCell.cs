@@ -4,7 +4,7 @@ using Microsoft.Maui.Graphics;
 namespace Microsoft.Maui.Controls
 {
 	/// <include file="../../../docs/Microsoft.Maui.Controls/SwitchCell.xml" path="Type[@FullName='Microsoft.Maui.Controls.SwitchCell']/Docs/*" />
-	public class SwitchCell : Cell
+	public partial class SwitchCell : Cell
 	{
 		/// <include file="../../../docs/Microsoft.Maui.Controls/SwitchCell.xml" path="//Member[@MemberName='OnProperty']/Docs/*" />
 		public static readonly BindableProperty OnProperty = BindableProperty.Create("On", typeof(bool), typeof(SwitchCell), false, propertyChanged: (obj, oldValue, newValue) =>

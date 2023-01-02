@@ -2,7 +2,7 @@ using Microsoft.Maui.Graphics;
 
 namespace Microsoft.Maui.Controls.Handlers.Compatibility
 {
-	public class SectionCell : TextCell { }
+	public partial class SectionCell : TextCell { }
 
 	public class CellContentFactory
 	{

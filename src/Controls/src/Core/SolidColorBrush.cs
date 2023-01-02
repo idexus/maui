@@ -4,7 +4,7 @@ namespace Microsoft.Maui.Controls
 {
 	/// <include file="../../docs/Microsoft.Maui.Controls/SolidColorBrush.xml" path="Type[@FullName='Microsoft.Maui.Controls.SolidColorBrush']/Docs/*" />
 	[System.ComponentModel.TypeConverter(typeof(BrushTypeConverter))]
-	public class SolidColorBrush : Brush
+	public partial class SolidColorBrush : Brush
 	{
 		/// <include file="../../docs/Microsoft.Maui.Controls/SolidColorBrush.xml" path="//Member[@MemberName='.ctor'][1]/Docs/*" />
 		public SolidColorBrush()

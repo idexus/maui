@@ -5,7 +5,7 @@ namespace Microsoft.Maui.Controls
 {
 	/// <include file="../../../docs/Microsoft.Maui.Controls/ViewCell.xml" path="Type[@FullName='Microsoft.Maui.Controls.ViewCell']/Docs/*" />
 	[ContentProperty("View")]
-	public class ViewCell : Cell
+	public partial class ViewCell : Cell
 	{
 		ReadOnlyCollection<Element> _logicalChildren;
 

@@ -4,7 +4,7 @@ using System.Windows.Input;
 namespace Microsoft.Maui.Controls
 {
 	/// <include file="../../../docs/Microsoft.Maui.Controls/BackButtonBehavior.xml" path="Type[@FullName='Microsoft.Maui.Controls.BackButtonBehavior']/Docs/*" />
-	public class BackButtonBehavior : BindableObject
+	public partial class BackButtonBehavior : BindableObject
 	{
 		/// <include file="../../../docs/Microsoft.Maui.Controls/BackButtonBehavior.xml" path="//Member[@MemberName='CommandParameterProperty']/Docs/*" />
 		public static readonly BindableProperty CommandParameterProperty =

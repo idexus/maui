@@ -1,7 +1,7 @@
 namespace Microsoft.Maui.Controls.Shapes
 {
 	/// <include file="../../../docs/Microsoft.Maui.Controls.Shapes/ScaleTransform.xml" path="Type[@FullName='Microsoft.Maui.Controls.Shapes.ScaleTransform']/Docs/*" />
-	public class ScaleTransform : Transform
+	public partial class ScaleTransform : Transform
 	{
 		/// <include file="../../../docs/Microsoft.Maui.Controls.Shapes/ScaleTransform.xml" path="//Member[@MemberName='.ctor'][1]/Docs/*" />
 		public ScaleTransform()

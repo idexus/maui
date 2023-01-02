@@ -14,7 +14,7 @@ namespace Microsoft.Maui.Controls
 {
 	/// <include file="../../../docs/Microsoft.Maui.Controls/BaseShellItem.xml" path="Type[@FullName='Microsoft.Maui.Controls.BaseShellItem']/Docs/*" />
 	[DebuggerDisplay("Title = {Title}, Route = {Route}")]
-	public class BaseShellItem : NavigableElement, IPropertyPropagationController, IVisualController, IFlowDirectionController, IWindowController
+	public partial class BaseShellItem : NavigableElement, IPropertyPropagationController, IVisualController, IFlowDirectionController, IWindowController
 	{
 		public event EventHandler Appearing;
 		public event EventHandler Disappearing;

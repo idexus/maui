@@ -6,7 +6,7 @@ namespace Microsoft.Maui.Controls
 {
 	/// <include file="../../../docs/Microsoft.Maui.Controls/Grid.xml" path="Type[@FullName='Microsoft.Maui.Controls.Grid']/Docs/*" />
 	[ContentProperty(nameof(Children))]
-	public class Grid : Layout, IGridLayout
+	public partial class Grid : Layout, IGridLayout
 	{
 		readonly Dictionary<IView, GridInfo> _viewInfo = new();
 

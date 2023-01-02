@@ -1,7 +1,7 @@
 namespace Microsoft.Maui.Controls
 {
 	/// <include file="../../../docs/Microsoft.Maui.Controls/GridItemsLayout.xml" path="Type[@FullName='Microsoft.Maui.Controls.GridItemsLayout']/Docs/*" />
-	public class GridItemsLayout : ItemsLayout
+	public partial class GridItemsLayout : ItemsLayout
 	{
 		/// <include file="../../../docs/Microsoft.Maui.Controls/GridItemsLayout.xml" path="//Member[@MemberName='SpanProperty']/Docs/*" />
 		public static readonly BindableProperty SpanProperty =

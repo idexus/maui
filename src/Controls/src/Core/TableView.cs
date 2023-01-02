@@ -12,7 +12,7 @@ namespace Microsoft.Maui.Controls
 {
 	/// <include file="../../docs/Microsoft.Maui.Controls/TableView.xml" path="Type[@FullName='Microsoft.Maui.Controls.TableView']/Docs/*" />
 	[ContentProperty(nameof(Root))]
-	public class TableView : View, ITableViewController, IElementConfiguration<TableView>, IVisualTreeElement
+	public partial class TableView : View, ITableViewController, IElementConfiguration<TableView>, IVisualTreeElement
 	{
 		/// <include file="../../docs/Microsoft.Maui.Controls/TableView.xml" path="//Member[@MemberName='RowHeightProperty']/Docs/*" />
 		public static readonly BindableProperty RowHeightProperty = BindableProperty.Create("RowHeight", typeof(int), typeof(TableView), -1);

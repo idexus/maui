@@ -3,7 +3,7 @@ using System;
 namespace Microsoft.Maui.Controls.Shapes
 {
 	/// <include file="../../../docs/Microsoft.Maui.Controls.Shapes/SkewTransform.xml" path="Type[@FullName='Microsoft.Maui.Controls.Shapes.SkewTransform']/Docs/*" />
-	public class SkewTransform : Transform
+	public partial class SkewTransform : Transform
 	{
 		/// <include file="../../../docs/Microsoft.Maui.Controls.Shapes/SkewTransform.xml" path="//Member[@MemberName='.ctor'][1]/Docs/*" />
 		public SkewTransform()

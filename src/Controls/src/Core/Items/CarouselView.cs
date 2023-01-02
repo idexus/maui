@@ -10,7 +10,7 @@ using System.Windows.Input;
 namespace Microsoft.Maui.Controls
 {
 	/// <include file="../../../docs/Microsoft.Maui.Controls/CarouselView.xml" path="Type[@FullName='Microsoft.Maui.Controls.CarouselView']/Docs/*" />
-	public class CarouselView : ItemsView
+	public partial class CarouselView : ItemsView
 	{
 		/// <include file="../../../docs/Microsoft.Maui.Controls/CarouselView.xml" path="//Member[@MemberName='CurrentItemVisualState']/Docs/*" />
 		public const string CurrentItemVisualState = "CurrentItem";

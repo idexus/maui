@@ -5,7 +5,7 @@ using Microsoft.Maui.Graphics;
 namespace Microsoft.Maui.Controls
 {
 	/// <include file="../../../docs/Microsoft.Maui.Controls/EntryCell.xml" path="Type[@FullName='Microsoft.Maui.Controls.EntryCell']/Docs/*" />
-	public class EntryCell : Cell, ITextAlignmentElement, IEntryCellController, ITextAlignment
+	public partial class EntryCell : Cell, ITextAlignmentElement, IEntryCellController, ITextAlignment
 	{
 		/// <include file="../../../docs/Microsoft.Maui.Controls/EntryCell.xml" path="//Member[@MemberName='TextProperty']/Docs/*" />
 		public static readonly BindableProperty TextProperty = BindableProperty.Create("Text", typeof(string), typeof(EntryCell), null, BindingMode.TwoWay);

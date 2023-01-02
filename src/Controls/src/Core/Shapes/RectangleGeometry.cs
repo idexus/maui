@@ -4,7 +4,7 @@ using Rect = Microsoft.Maui.Graphics.Rect;
 namespace Microsoft.Maui.Controls.Shapes
 {
 	/// <include file="../../../docs/Microsoft.Maui.Controls.Shapes/RectangleGeometry.xml" path="Type[@FullName='Microsoft.Maui.Controls.Shapes.RectangleGeometry']/Docs/*" />
-	public class RectangleGeometry : Geometry
+	public partial class RectangleGeometry : Geometry
 	{
 		/// <include file="../../../docs/Microsoft.Maui.Controls.Shapes/RectangleGeometry.xml" path="//Member[@MemberName='.ctor'][1]/Docs/*" />
 		public RectangleGeometry()

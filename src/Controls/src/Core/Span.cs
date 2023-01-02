@@ -6,7 +6,7 @@ namespace Microsoft.Maui.Controls
 {
 	/// <include file="../../docs/Microsoft.Maui.Controls/Span.xml" path="Type[@FullName='Microsoft.Maui.Controls.Span']/Docs/*" />
 	[ContentProperty("Text")]
-	public class Span : GestureElement, IFontElement, IStyleElement, ITextElement, ILineHeightElement, IDecorableTextElement
+	public partial class Span : GestureElement, IFontElement, IStyleElement, ITextElement, ILineHeightElement, IDecorableTextElement
 	{
 		internal readonly MergedStyle _mergedStyle;
 

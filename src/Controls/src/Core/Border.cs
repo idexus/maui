@@ -10,7 +10,7 @@ using Microsoft.Maui.Layouts;
 namespace Microsoft.Maui.Controls
 {
 	[ContentProperty(nameof(Content))]
-	public class Border : View, IContentView, IBorderView, IPaddingElement
+	public partial class Border : View, IContentView, IBorderView, IPaddingElement
 	{
 		float[]? _strokeDashPattern;
 		ReadOnlyCollection<Element>? _logicalChildren;

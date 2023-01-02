@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace Microsoft.Maui.Controls
 {
-	public class ReorderableItemsView : GroupableItemsView
+	public partial class ReorderableItemsView : GroupableItemsView
 	{
 		public event EventHandler ReorderCompleted;
 

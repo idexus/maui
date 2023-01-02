@@ -6,7 +6,7 @@ namespace Microsoft.Maui.Controls.Shapes
 {
 	/// <include file="../../../docs/Microsoft.Maui.Controls.Shapes/GeometryGroup.xml" path="Type[@FullName='Microsoft.Maui.Controls.Shapes.GeometryGroup']/Docs/*" />
 	[ContentProperty("Children")]
-	public class GeometryGroup : Geometry
+	public partial class GeometryGroup : Geometry
 	{
 		/// <include file="../../../docs/Microsoft.Maui.Controls.Shapes/GeometryGroup.xml" path="//Member[@MemberName='ChildrenProperty']/Docs/*" />
 		public static readonly BindableProperty ChildrenProperty =

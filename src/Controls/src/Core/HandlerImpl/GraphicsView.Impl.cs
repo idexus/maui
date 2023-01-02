@@ -3,7 +3,7 @@ using Microsoft.Maui.Graphics;
 
 namespace Microsoft.Maui.Controls
 {
-	public class GraphicsView : View, IGraphicsView
+	public partial class GraphicsView : View, IGraphicsView
 	{
 		public event EventHandler<TouchEventArgs> StartHoverInteraction;
 		public event EventHandler<TouchEventArgs> MoveHoverInteraction;
