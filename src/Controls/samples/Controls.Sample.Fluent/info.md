@@ -1,6 +1,6 @@
 ### Discussed in https://github.com/dotnet/maui/discussions/12273
 
-I would like to have fluent API support in MAUI so first I created a library [https://github.com/idexus/Sharp.UI](https://github.com/idexus/Sharp.UI) then because some classes are sealed, I decided to create a fork [https://github.com/idexus/maui](https://github.com/idexus/maui) to fully support this feature in the MAUI project. Most often it is generated automatically.
+I would like to have fluent API support in MAUI so first I created a library [https://github.com/idexus/Sharp.UI](https://github.com/idexus/Sharp.UI) then because some classes are sealed, I decided to create a fork [https://github.com/idexus/maui](https://github.com/idexus/maui) to fully support this feature in the MAUI project. Most code is generated using source generators.
 
 I think for many it would make it much easier to create an interface without the need for XAML, without disabling the possibility of using it.
 
