@@ -16,7 +16,7 @@
 		<ApplicationTitle>.NET MAUI Code Only Sample</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.microsoft.maui.controls.codeonlysample</ApplicationId>
+		<ApplicationId>com.microsoft.maui.controls.samples.fluent</ApplicationId>
 		<ApplicationIdGuid>d102e8e3-ec5a-4f47-8f81-57afe93e47a6</ApplicationIdGuid>
 
 		<!-- Versions -->
