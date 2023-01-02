@@ -1,8 +1,8 @@
-I would love to have a fluent API support in MAUI, so I have created a fork [https://github.com/idexus/maui](https://github.com/idexus/maui) to support this feature. 
+I would love to have a fluent API support in the MAUI, so I have created a fork [https://github.com/idexus/maui](https://github.com/idexus/maui) to support this feature. 
 
 # Properties
 
-It generates fluent extension methods for all properties and bindable properties in all `BindableObject` classes, and for properties in `Style`, `VisualState`, `VisualStateGroup`, `VisualStateGroupList` classes
+It generates fluent extension methods for all properties and bindable properties for all `BindableObject` classes, and for properties for `Style`, `VisualState`, `VisualStateGroup`, `VisualStateGroupList` classes
 
 Usage:
 ```cs
@@ -83,7 +83,7 @@ public static T OnClicked<T>(this T obj, System.Action<T> action)
 
 # `ContentProperty` attributes
 
-It generates implementation of `IList` or `IEnumerable` interfaces to add `Add()` method support for all classes with the `ContentProperty` attribute
+It generates implementation of `IList` (Some classes have already implemented the `IList` interface) or `IEnumerable` interfaces to add `Add()` method support for all classes with the `ContentProperty` attribute.
 
 Example usage:
 
@@ -105,14 +105,6 @@ new Border
 
     }
 }
-.Background(
-    new LinearGradientBrush(new Point(0,0), new Point(1,1))
-    {
-        new GradientStop(Colors.Yellow, 0.0),
-        new GradientStop(Colors.Red, 0.25),
-        new GradientStop(Colors.Blue, 0.75),
-        new GradientStop(Colors.LimeGreen, 1.0)
-    })
 ```
 
 Generated class implementation for single item containers:
@@ -132,7 +124,7 @@ public partial class Border : IEnumerable
 }
 ```
 
-Generated class implementation for ollection containers:
+Generated class implementation for collection containers:
 
 ```cs
 public partial class Shell : IList<Microsoft.Maui.Controls.ShellItem>
@@ -269,7 +261,55 @@ new Label()
     )
 ```
 
-# User classes
+# Style
+
+### `BindableProperty` => `Setter`
+
+```cs
+Button.BackgroundColorProperty.Set(Colors.White),
+
+Button.TextColorProperty.Set().OnLight(Colors.White).OnDark(AppColors.Primary),
+```
+
+### `IList` Add methods
+
+Additional `Add()` methods for the `IList` interface
+
+```cs
+public partial class Style
+{
+    public void Add(Setter setter) {...}
+    public void Add(Trigger trigger) {...}
+    public void Add(DataTrigger trigger) {...}
+    public void Add(VisualStateGroupList groupList) {...}
+    public void Add(VisualStateGroup group) {...}
+    public void Add(VisualState visualState) {...}
+}
+```
+
+Usage example
+```cs
+new Style(typeof(Button))
+{
+    Button.TextColorProperty.Set().OnLight(Colors.White).OnDark(AppColors.Primary),
+    Button.BackgroundColorProperty.Set().OnLight(AppColors.Primary).OnDark(Colors.White),
+    Button.FontSizeProperty.Set(14).OnDesktop(20),
+    Button.CornerRadiusProperty.Set(8).OniOS(15),
+    new VisualState(VisualState.VisualElement.Normal)
+    {
+        Button.TextColorProperty.Set().OnLight(Colors.White).OnDark(AppColors.Primary),
+        Button.BackgroundColorProperty.Set().OnLight(AppColors.Primary).OnDark(Colors.White),
+    },
+    new VisualState(VisualState.VisualElement.Disabled)
+    {
+        Button.TextColorProperty.Set().OnLight(AppColors.Gray950).OnDark(AppColors.Gray200),
+        Button.BackgroundColorProperty.Set().OnLight(AppColors.Gray200).OnDark(AppColors.Gray600),
+    },
+},
+```
+
+
+# User defined classes
 
 ### `[FluentInterface]` attribute
 
@@ -323,7 +363,7 @@ public partial class AngleViewModel : BindableObject, IAngleViewModelProperties
 }
 ```
 
-## Custom user views
+# Custom user views
 
 ```cs
 [BindableProperties]
