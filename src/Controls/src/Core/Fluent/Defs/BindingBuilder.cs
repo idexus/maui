@@ -1,7 +1,30 @@
-﻿namespace Microsoft.Maui.Controls.Fluent
+﻿using System;
+using System.Globalization;
+
+namespace Microsoft.Maui.Controls.Fluent
 {
 	public class BindingBuilder<T>
 	{
+		public class ValueConverter : IValueConverter
+		{
+			internal System.Func<object, object> FuncConvert = null;
+			internal System.Func<object, object> FuncConvertBack = null;
+
+			public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+			{
+				if (value != null && FuncConvert != null)
+					return FuncConvert(value);
+				return null;
+			}
+
+			public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+			{
+				if (value != null && FuncConvertBack != null)
+					return FuncConvertBack(value);
+				return null;
+			}
+		}
+
 		//--- bindable ---
 
 		public BindingBuilder<T> Path(string path) { this.path = path; return this; }
@@ -11,12 +34,31 @@
 		public BindingBuilder<T> Parameter(string converterParameter) { this.converterParameter = converterParameter; return this; }
 		public BindingBuilder<T> Source(object source) { this.source = source; return this; }
 
-		private string path = null;
-		private BindingMode bindingMode = Microsoft.Maui.Controls.BindingMode.Default;
-		private IValueConverter converter = null;
-		private string converterParameter = null;
-		private string stringFormat = null;
-		private object source = null;
+		public BindingBuilder<T> Convert<Q>(Func<Q, T> convert)
+		{
+			if (valueConverter == null)
+				valueConverter = new ValueConverter();
+			valueConverter.FuncConvert = e => convert((Q)e);
+			this.converter = valueConverter;
+			return this;
+		}
+
+		public BindingBuilder<T> ConvertBack<Q>(Func<T, Q> convert)
+		{
+			if (valueConverter == null)
+				valueConverter = new ValueConverter();
+			valueConverter.FuncConvertBack = e => convert((T)e);
+			this.converter = valueConverter;
+			return this;
+		}
+
+		string path = null;
+		BindingMode bindingMode = Microsoft.Maui.Controls.BindingMode.Default;
+		IValueConverter converter = null;
+		ValueConverter valueConverter = null;
+		string converterParameter = null;
+		string stringFormat = null;
+		object source = null;
 
 		private BindableObject obj;
 		private BindableProperty property;
