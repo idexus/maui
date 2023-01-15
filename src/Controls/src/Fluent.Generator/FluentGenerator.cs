@@ -235,7 +235,7 @@ public void Add({propertyType.Type.Name} {Helpers.CamelCase(propertyName)})
 					var propertyType = FindPropertySymbolWithName(typedSymbol, propertyName);
 					Helpers.IsGenericIList((INamedTypeSymbol)propertyType.Type, out var itemType);
 					builder.AppendLine($@"
-// ------- Microsoft.Maui.Controls.Style -------
+// ------- {symbol.ToDisplayString()} -------
 
 public IEnumerator GetEnumerator()
 	=> this.{propertyName}.GetEnumerator();
