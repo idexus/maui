@@ -183,8 +183,8 @@ namespace Microsoft.Maui.Controls.Fluent.Generator
 			GenerateClassesWithContentFile(redefined, "__2b_redefined.g.cs");
 			GenerateClassesWithContentFile(notGenerate, "__3_notGenerate.g.cs");
 			GenerateClassesWithContentFile(rest, "__4_rest.g.cs");
-			GenerateClassesWithContentFile(ilistcontent, "__5_ilistcontent.g.cs");
-			GenerateClassesWithContentFile(ienumerablecontainer, "__6_ienumerablecontainer.g.cs");
+			GenerateClassesWithContentFile(ilistcontent, "__5_ilistcontent.g.cs", ilist: true);
+			GenerateClassesWithContentFile(ienumerablecontainer, "__6_ienumerablecontainer.g.cs", single: true);
 		}
 
 		void GenerateClassesWithContentFile(IEnumerable<ISymbol> symbols, string fileName, bool single = false, bool ilist = false)
@@ -203,6 +203,48 @@ namespace Microsoft.Maui.Controls.Fluent.Generator
 
 			foreach (var symbol in symbols)
 				builder.AppendLine($"{symbol.ToDisplayString()}");
+
+
+			if (single)
+			{
+				foreach (var symbol in symbols)
+				{
+					var typedSymbol = (INamedTypeSymbol)symbol;
+					var propertyName = GetContentPropertyName(typedSymbol);
+					var propertyType = FindPropertySymbolWithName(typedSymbol, propertyName);
+					builder.AppendLine($@"
+// ------- {symbol.ToDisplayString()} -------
+
+public IEnumerator GetEnumerator()
+{{
+	yield return this.{propertyName};
+}}
+
+public void Add({propertyType.Type.Name} {Helpers.CamelCase(propertyName)})
+	=> this.{propertyName} = {Helpers.CamelCase(propertyName)};
+");
+				}
+			}
+
+			if (ilist)
+			{
+				foreach (var symbol in symbols)
+				{
+					var typedSymbol = (INamedTypeSymbol)symbol;
+					var propertyName = GetContentPropertyName(typedSymbol);
+					var propertyType = FindPropertySymbolWithName(typedSymbol, propertyName);
+					Helpers.IsGenericIList((INamedTypeSymbol)propertyType.Type, out var itemType);
+					builder.AppendLine($@"
+// ------- Microsoft.Maui.Controls.Style -------
+
+public IEnumerator GetEnumerator()
+	=> this.{propertyName}.GetEnumerator();
+
+public void Add({itemType.Name} {Helpers.CamelCase(propertyName)})
+	=> this.{propertyName}.Add({Helpers.CamelCase(propertyName)});
+");
+				}
+			}
 
 			builder.AppendLine();
 
