@@ -8,18 +8,18 @@ namespace Microsoft.Maui.Controls.Fluent
 	{
 		internal bool defaultIsSet = false;
 		internal bool newValueIsSet = false;
-		internal T @default;
-		internal T newValue;
+		internal T? @default = default;
+		internal T? newValue = default;
 
 
 		public bool ValueIsSet() => defaultIsSet || newValueIsSet;
-		public T GetValue()
+		public T? GetValue()
 		{
 			if (defaultIsSet || newValueIsSet)
 			{
 				if (newValueIsSet)
 					return newValue;
-				else
+				else 
 					return @default;
 			}
 			throw new ArgumentException("No value definied");

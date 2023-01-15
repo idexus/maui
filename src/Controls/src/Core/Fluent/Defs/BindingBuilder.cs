@@ -7,17 +7,17 @@ namespace Microsoft.Maui.Controls.Fluent
 	{
 		public class ValueConverter : IValueConverter
 		{
-			internal System.Func<object, object> FuncConvert = null;
-			internal System.Func<object, object> FuncConvertBack = null;
+			internal System.Func<object, object?>? FuncConvert = null;
+			internal System.Func<object, object?>? FuncConvertBack = null;
 
-			public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+			public object? Convert(object value, Type targetType, object parameter, CultureInfo culture)
 			{
 				if (value != null && FuncConvert != null)
 					return FuncConvert(value);
 				return null;
 			}
 
-			public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+			public object? ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
 			{
 				if (value != null && FuncConvertBack != null)
 					return FuncConvertBack(value);
@@ -38,7 +38,7 @@ namespace Microsoft.Maui.Controls.Fluent
 		{
 			if (valueConverter == null)
 				valueConverter = new ValueConverter();
-			valueConverter.FuncConvert = e => convert((Q)e);
+			valueConverter.FuncConvert = e => convert((Q)e)!;
 			this.converter = valueConverter;
 			return this;
 		}
@@ -52,13 +52,13 @@ namespace Microsoft.Maui.Controls.Fluent
 			return this;
 		}
 
-		string path = null;
+		string? path = null;
 		BindingMode bindingMode = Microsoft.Maui.Controls.BindingMode.Default;
-		IValueConverter converter = null;
-		ValueConverter valueConverter = null;
-		string converterParameter = null;
-		string stringFormat = null;
-		object source = null;
+		IValueConverter? converter = null;
+		ValueConverter? valueConverter = null;
+		string? converterParameter = null;
+		string? stringFormat = null;
+		object? source = null;
 
 		private BindableObject obj;
 		private BindableProperty property;

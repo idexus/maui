@@ -9,7 +9,7 @@ namespace Microsoft.Maui.Controls
 	{
 		VisualStateGroupList GetVisualStateGroupList()
 		{
-			Microsoft.Maui.Controls.VisualStateGroupList groupList = null;
+			Microsoft.Maui.Controls.VisualStateGroupList? groupList = null;
 			var groupListSetter = Setters.FirstOrDefault(e => e.Property == VisualStateManager.VisualStateGroupsProperty);
 			if (groupListSetter != null)
 			{

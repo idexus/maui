@@ -31,11 +31,13 @@ namespace Microsoft.Maui.Controls.Fluent.Generator
 			builder.AppendLine();
 
 			builder.AppendLine("#nullable enable");
+			builder.AppendLine("#pragma warning disable CS8601");
 			builder.AppendLine();
 
 			GenerateExtensionNameSpace();
 
 			builder.AppendLine();
+			builder.AppendLine("#pragma warning restore CS8601");
 			builder.AppendLine("#nullable restore");
 
 			if (isExtensionMethodsGenerated)

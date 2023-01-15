@@ -15,10 +15,10 @@ namespace Microsoft.Maui.Controls.Fluent
 			BindableProperty property,
 			string sourcePath,
 			BindingMode mode = BindingMode.Default,
-			IValueConverter converter = null,
-			string converterParameter = null,
-			string stringFormat = null,
-			object source = null) where T : BindableObject
+			IValueConverter? converter = null,
+			string? converterParameter = null,
+			string? stringFormat = null,
+			object? source = null) where T : BindableObject
 		{
 			obj.SetBinding(
 				targetProperty: property,

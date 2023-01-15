@@ -6,7 +6,7 @@ namespace Microsoft.Maui.Controls.Fluent
 {
 	public class LazyValueBuilder<T>
 	{
-		private readonly Func<T,T> configure = null;
+		private readonly Func<T,T>? configure = null;
 
 		public LazyValueBuilder() { }
 		public LazyValueBuilder(Func<T,T> configure)
@@ -14,24 +14,22 @@ namespace Microsoft.Maui.Controls.Fluent
 			this.configure = configure;
 		}
 
-		public Func<T> LoadDefault = null;
-		public Func<T> LoadValue = null;
+		public Func<T>? LoadDefault = null;
+		public Func<T>? LoadValue = null;
 
 		public bool ValueIsSet() => LoadValue != null || LoadDefault != null;
 		public T GetValue()
 		{
-			if (LoadDefault != null || LoadValue != null)
-			{
-				T value;
-				if (LoadValue != null)
-					value = LoadValue();
-				else
-					value = LoadDefault();
-				if (configure != null)
-					value = configure(value);
-				return value;
-			}
-			throw new ArgumentException("No value definied");
+			T value;
+			if (LoadValue != null)
+				value = LoadValue();
+			else if (LoadDefault != null)
+				value = LoadDefault();
+			else
+				throw new ArgumentException("No value definied");
+			if (configure != null)
+				value = configure(value);
+			return value;
 		}
 
 		public LazyValueBuilder<T> Default(Func<T> loadValue) { this.LoadDefault = loadValue; return this; }
