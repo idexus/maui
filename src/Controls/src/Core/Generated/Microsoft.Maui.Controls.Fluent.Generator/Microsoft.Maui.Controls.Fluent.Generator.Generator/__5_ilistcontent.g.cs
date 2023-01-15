@@ -29,7 +29,7 @@ Microsoft.Maui.Controls.Trigger
 Microsoft.Maui.Controls.VisualState
 Microsoft.Maui.Controls.VisualStateGroup
 
-// ------- Microsoft.Maui.Controls.Style -------
+// ------- Microsoft.Maui.Controls.DataTrigger -------
 
 public IEnumerator GetEnumerator()
 	=> this.Setters.GetEnumerator();
@@ -38,7 +38,7 @@ public void Add(Setter setters)
 	=> this.Setters.Add(setters);
 
 
-// ------- Microsoft.Maui.Controls.Style -------
+// ------- Microsoft.Maui.Controls.EventTrigger -------
 
 public IEnumerator GetEnumerator()
 	=> this.Actions.GetEnumerator();
@@ -47,7 +47,7 @@ public void Add(TriggerAction actions)
 	=> this.Actions.Add(actions);
 
 
-// ------- Microsoft.Maui.Controls.Style -------
+// ------- Microsoft.Maui.Controls.FormattedString -------
 
 public IEnumerator GetEnumerator()
 	=> this.Spans.GetEnumerator();
@@ -56,7 +56,7 @@ public void Add(Span spans)
 	=> this.Spans.Add(spans);
 
 
-// ------- Microsoft.Maui.Controls.Style -------
+// ------- Microsoft.Maui.Controls.GradientBrush -------
 
 public IEnumerator GetEnumerator()
 	=> this.GradientStops.GetEnumerator();
@@ -65,7 +65,7 @@ public void Add(GradientStop gradientStops)
 	=> this.GradientStops.Add(gradientStops);
 
 
-// ------- Microsoft.Maui.Controls.Style -------
+// ------- Microsoft.Maui.Controls.MultiBinding -------
 
 public IEnumerator GetEnumerator()
 	=> this.Bindings.GetEnumerator();
@@ -74,7 +74,7 @@ public void Add(BindingBase bindings)
 	=> this.Bindings.Add(bindings);
 
 
-// ------- Microsoft.Maui.Controls.Style -------
+// ------- Microsoft.Maui.Controls.MultiPage<T> -------
 
 public IEnumerator GetEnumerator()
 	=> this.Children.GetEnumerator();
@@ -83,7 +83,7 @@ public void Add(T children)
 	=> this.Children.Add(children);
 
 
-// ------- Microsoft.Maui.Controls.Style -------
+// ------- Microsoft.Maui.Controls.MultiTrigger -------
 
 public IEnumerator GetEnumerator()
 	=> this.Setters.GetEnumerator();
@@ -92,7 +92,7 @@ public void Add(Setter setters)
 	=> this.Setters.Add(setters);
 
 
-// ------- Microsoft.Maui.Controls.Style -------
+// ------- Microsoft.Maui.Controls.OnPlatform<T> -------
 
 public IEnumerator GetEnumerator()
 	=> this.Platforms.GetEnumerator();
@@ -101,7 +101,7 @@ public void Add(On platforms)
 	=> this.Platforms.Add(platforms);
 
 
-// ------- Microsoft.Maui.Controls.Style -------
+// ------- Microsoft.Maui.Controls.Shapes.GeometryGroup -------
 
 public IEnumerator GetEnumerator()
 	=> this.Children.GetEnumerator();
@@ -110,7 +110,7 @@ public void Add(Geometry children)
 	=> this.Children.Add(children);
 
 
-// ------- Microsoft.Maui.Controls.Style -------
+// ------- Microsoft.Maui.Controls.Shapes.PathFigure -------
 
 public IEnumerator GetEnumerator()
 	=> this.Segments.GetEnumerator();
@@ -119,7 +119,7 @@ public void Add(PathSegment segments)
 	=> this.Segments.Add(segments);
 
 
-// ------- Microsoft.Maui.Controls.Style -------
+// ------- Microsoft.Maui.Controls.Shapes.PathGeometry -------
 
 public IEnumerator GetEnumerator()
 	=> this.Figures.GetEnumerator();
@@ -128,7 +128,7 @@ public void Add(PathFigure figures)
 	=> this.Figures.Add(figures);
 
 
-// ------- Microsoft.Maui.Controls.Style -------
+// ------- Microsoft.Maui.Controls.Shapes.Polygon -------
 
 public IEnumerator GetEnumerator()
 	=> this.Points.GetEnumerator();
@@ -137,7 +137,7 @@ public void Add(Point points)
 	=> this.Points.Add(points);
 
 
-// ------- Microsoft.Maui.Controls.Style -------
+// ------- Microsoft.Maui.Controls.Shapes.Polyline -------
 
 public IEnumerator GetEnumerator()
 	=> this.Points.GetEnumerator();
@@ -146,7 +146,7 @@ public void Add(Point points)
 	=> this.Points.Add(points);
 
 
-// ------- Microsoft.Maui.Controls.Style -------
+// ------- Microsoft.Maui.Controls.Shapes.TransformGroup -------
 
 public IEnumerator GetEnumerator()
 	=> this.Children.GetEnumerator();
@@ -155,7 +155,7 @@ public void Add(Transform children)
 	=> this.Children.Add(children);
 
 
-// ------- Microsoft.Maui.Controls.Style -------
+// ------- Microsoft.Maui.Controls.Shell -------
 
 public IEnumerator GetEnumerator()
 	=> this.Items.GetEnumerator();
@@ -164,7 +164,7 @@ public void Add(ShellItem items)
 	=> this.Items.Add(items);
 
 
-// ------- Microsoft.Maui.Controls.Style -------
+// ------- Microsoft.Maui.Controls.ShellItem -------
 
 public IEnumerator GetEnumerator()
 	=> this.Items.GetEnumerator();
@@ -173,7 +173,7 @@ public void Add(ShellSection items)
 	=> this.Items.Add(items);
 
 
-// ------- Microsoft.Maui.Controls.Style -------
+// ------- Microsoft.Maui.Controls.ShellSection -------
 
 public IEnumerator GetEnumerator()
 	=> this.Items.GetEnumerator();
@@ -191,7 +191,7 @@ public void Add(Setter setters)
 	=> this.Setters.Add(setters);
 
 
-// ------- Microsoft.Maui.Controls.Style -------
+// ------- Microsoft.Maui.Controls.TableView -------
 
 public IEnumerator GetEnumerator()
 	=> this.Root.GetEnumerator();
@@ -200,7 +200,7 @@ public void Add(TableSection root)
 	=> this.Root.Add(root);
 
 
-// ------- Microsoft.Maui.Controls.Style -------
+// ------- Microsoft.Maui.Controls.Trigger -------
 
 public IEnumerator GetEnumerator()
 	=> this.Setters.GetEnumerator();
@@ -209,7 +209,7 @@ public void Add(Setter setters)
 	=> this.Setters.Add(setters);
 
 
-// ------- Microsoft.Maui.Controls.Style -------
+// ------- Microsoft.Maui.Controls.VisualState -------
 
 public IEnumerator GetEnumerator()
 	=> this.Setters.GetEnumerator();
@@ -218,7 +218,7 @@ public void Add(Setter setters)
 	=> this.Setters.Add(setters);
 
 
-// ------- Microsoft.Maui.Controls.Style -------
+// ------- Microsoft.Maui.Controls.VisualStateGroup -------
 
 public IEnumerator GetEnumerator()
 	=> this.States.GetEnumerator();
